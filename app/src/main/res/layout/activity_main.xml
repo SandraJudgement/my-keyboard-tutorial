@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#E3EBF9"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MainActivity">
 
@@ -26,29 +26,33 @@
         android:textColor="@color/black"
         android:textSize="13sp" />
 
-    <LinearLayout android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:orientation="vertical"
-        android:gravity="center">
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:id="@+id/btnEnableKeyboard"
-            android:textAllCaps="false"
-            android:backgroundTint="#F69A4D"
-            android:fontFamily="@font/montserrat_medium"
-            android:layout_marginTop="20dp"
-            android:text="@string/enable_keyboard" />
+        android:gravity="center"
+        android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEnableKeyboard"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:id="@+id/btnChooseKeyboard"
-            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#F69A4D"
             android:fontFamily="@font/montserrat_medium"
+            android:text="@string/enable_keyboard"
+            android:textAllCaps="false"
+            app:cornerRadius="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChooseKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
             android:layout_marginTop="20dp"
-            android:text="@string/choose_keyboard" />
+            android:backgroundTint="#F69A4D"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/choose_keyboard"
+            android:textAllCaps="false"
+            app:cornerRadius="14dp" />
     </LinearLayout>
 </LinearLayout>

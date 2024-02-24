@@ -11,17 +11,6 @@ import com.example.mykeyboard.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private fun isKeyboardEnabled(): Boolean {
-        val inputMethodManager =
-            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        val enabledInputMethodIds = inputMethodManager.enabledInputMethodList.map { it.id }
-        return enabledInputMethodIds.contains("com.example.mykeyboard/.MyInputMethodService")
-    }
-
-    private fun openKeyboardChooserSettings() {
-        val im = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        im.showInputMethodPicker()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +34,18 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         }
+    }
+
+    private fun isKeyboardEnabled(): Boolean {
+        val inputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val enabledInputMethodIds = inputMethodManager.enabledInputMethodList.map { it.id }
+        return enabledInputMethodIds.contains("com.example.mykeyboard/.MyInputMethodService")
+    }
+
+    private fun openKeyboardChooserSettings() {
+        val im = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        im.showInputMethodPicker()
     }
 
     private fun openKeyboardSettings() {

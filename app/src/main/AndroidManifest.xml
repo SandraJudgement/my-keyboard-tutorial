@@ -35,5 +35,4 @@
                 android:resource="@xml/method" />
         </service>
     </application>
-
 </manifest>

@@ -3,7 +3,26 @@
     <style name="Base.Theme.MyKeyboard" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#E3EBF9</item>
     </style>
 
     <style name="Theme.MyKeyboard" parent="Base.Theme.MyKeyboard" />
+
+    <style name="btnLightTheme" parent="Widget.AppCompat.Button">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/btn_white_ripple</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="btnDarkTheme" parent="Widget.AppCompat.Button">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/btn_ripple</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 </resources>

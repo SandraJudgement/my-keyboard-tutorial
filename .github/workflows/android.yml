@@ -1,180 +1,86 @@
-name: CI
+name: Generated APK AAB (Upload - Create Artifact To Github Action)
+
+env:
+  # The name of the main module repository
+  main_project_module: app
+
+  # The name of the Play Store
+  playstore_name: Frogobox ID
 
 on:
+
   push:
     branches:
-      - main
-      - develop
-    paths-ignore:
-      - docs/**
-      - README.md
-      - LICENSE
-  pull_request:
-    branches:
-      - develop
-    paths-ignore:
-      - docs/**
-      - README.md
-      - LICENSE
+      - 'release/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-    # チェックアウト
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-    # JDKのセットアップ
-    - name: set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'zulu'
-        java-version: '11'
+      # Set Current Date As Env Variable
+      - name: Set current date as env variable
+        run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
-    # Gradleのキャッシュ復元
-    - uses: actions/cache@v2
-      with:
-        path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+      # Set Repository Name As Env Variable
+      - name: Set repository name as env variable
+        run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 
-    # 依存関係の出力
-    - name: Displays the Android dependencies of the project
-      run: ./gradlew androidDependencies
+      - name: Set Up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' # See 'Supported distributions' for available options
+          java-version: '17'
+          cache: 'gradle'
 
-    # コンパイル
-    - name: Run Compile
-      run: ./gradlew assembleDebug
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    # チェックアウト
-    - uses: actions/checkout@v2
+      # Run Tests Build
+      - name: Run gradle tests
+        run: ./gradlew test
 
-    # JDKのセットアップ
-    - name: set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'zulu'
-        java-version: '11'
+      # Run Build Project
+      - name: Build gradle project
+        run: ./gradlew build
 
-    # Gradleのキャッシュ復元
-    - uses: actions/cache@v2
-      with:
-        path: ~/.gradle/caches
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+      # Create APK Debug
+      - name: Build apk debug project (APK) - ${{ env.main_project_module }} module
+        run: ./gradlew assembleDebug
 
-    # テスト
-    - name: Test with Gradle
-      run: ./gradlew test --stacktrace
+      # Create APK Release
+      - name: Build apk release project (APK) - ${{ env.main_project_module }} module
+        run: ./gradlew assemble
 
-    # コードカバレッジをJaCoCo形式で取得
-    - name: Get code coverage for JaCoCo
-      run: ./gradlew jacocoDebugTestReport
+      # Create Bundle AAB Release
+      # Noted for main module build [main_project_module]:bundleRelease
+      - name: Build app bundle release (AAB) - ${{ env.main_project_module }} module
+        run: ./gradlew ${{ env.main_project_module }}:bundleRelease
 
-    # コードカバレッジをCodecovへアップロード
-    - name: Upload code coverage to Codecov
-      run: bash <(curl -s https://codecov.io/bash)
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      # Upload Artifact Build
+      # Noted For Output [main_project_module]/build/outputs/apk/debug/
+      - name: Upload APK Debug - ${{ env.repository_name }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) debug generated
+          path: ${{ env.main_project_module }}/build/outputs/apk/debug/
 
-    # テスト結果とコードカバレッジのアップロード
-    - name: Upload test results and code coverage Artifact
-      uses: actions/upload-artifact@v2
-      if: success() || failure()
-      with:
-        name: results
-        path: |
-          **/build/reports/tests/**/*
-          **/build/reports/test-results/**/*
-          **/build/reports/jacoco/**/*
-        if-no-files-found: warn
-        retention-days: 14
+      # Noted For Output [main_project_module]/build/outputs/apk/release/
+      - name: Upload APK Release - ${{ env.repository_name }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - APK(s) release generated
+          path: ${{ env.main_project_module }}/build/outputs/apk/release/
 
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-    # チェックアウト
-    - uses: actions/checkout@v2
-
-    # 静的解析
-    - name: Run Inspection
-      run: ./gradlew lint
-
-    # 結果の表示
-    - name: Show results on GitHub
-      uses: yutailang0119/action-android-lint@v1
-      with:
-        xml_path: '**/build/reports/lint-results-*.xml'
-
-    # アーティファクトへアップロード
-    - name: Upload results Artifact
-      uses: actions/upload-artifact@v2
-      if: success() || failure()
-      with:
-        name: results
-        path: |
-          **/build/reports/lint-results-*.html
-          **/build/reports/lint-results-*.xml
-        if-no-files-found: error
-        retention-days: 14
-
-  detekt:
-    runs-on: ubuntu-latest
-    steps:
-    # チェックアウト
-    - uses: actions/checkout@v2
-
-    # 静的解析
-    - name: Lint with detekt
-      run: ./gradlew detekt
-
-    # アーティファクトへアップロード
-    - name: Upload results Artifact
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-        name: results
-        path: |
-          **/build/reports/detekt/**/*
-        if-no-files-found: error
-        retention-days: 14
-
-  ktlint:
-    runs-on: ubuntu-latest
-    steps:
-    # チェックアウト
-    - uses: actions/checkout@v2
-
-    # インストール
-    - name: Install ktlint
-      run: |
-        curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.42.1/ktlint
-        chmod a+x ktlint
-        sudo mv ktlint /usr/local/bin/
-
-    # 静的解析
-    - name: Lint with ktlint
-      run: ktlint --reporter=checkstyle,output=build/ktlint-report.xml
-      continue-on-error: true
-
-    # 結果の表示
-    - name: Show results on GitHub
-      uses: yutailang0119/action-ktlint@v1
-      with:
-        xml_path: build/ktlint-report.xml
-
-    # アーティファクトへアップロード
-    - name: Upload results Artifact
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-        name: results
-        path: |
-          **/build/ktlint-report.xml
-        if-no-files-found: error
-        retention-days: 14
+      # Noted For Output [main_project_module]/build/outputs/bundle/release/
+      - name: Upload AAB (App Bundle) Release - ${{ env.repository_name }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.date_today }} - ${{ env.playstore_name }} - ${{ env.repository_name }} - App bundle(s) AAB release generated
+          path: ${{ env.main_project_module }}/build/outputs/bundle/release/

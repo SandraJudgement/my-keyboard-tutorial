@@ -35,10 +35,10 @@ android {
                     }
                 }
                 // どうやら appフォルダ の中を見に行ってるみたいなのでプロジェクトのルートフォルダを指定する
-                storeFile = File(rootProject.projectDir, "keystore.jks")
-                keyAlias = System.getenv("ENV_SIGN_KEY_ALIAS")
-                keyPassword = System.getenv("ENV_SIGN_KEY_PASSWORD")
-                storePassword = System.getenv("ENV_SIGN_STORE_PASSWORD")
+                //storeFile = File(rootProject.projectDir, "keystore.jks")
+                //keyAlias = System.getenv("ENV_SIGN_KEY_ALIAS")
+                //keyPassword = System.getenv("ENV_SIGN_KEY_PASSWORD")
+                //storePassword = System.getenv("ENV_SIGN_STORE_PASSWORD")
             }
         }
     }
@@ -46,7 +46,7 @@ android {
     buildTypes {
         release {
             // 署名の設定を適用する
-            signingConfig = signingConfigs.getByName("release_signing_config")
+            //signingConfig = signingConfigs.getByName("release_signing_config")
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }

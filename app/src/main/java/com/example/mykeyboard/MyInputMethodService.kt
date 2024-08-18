@@ -40,6 +40,36 @@ class MyInputMethodService : InputMethodService() {
             inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_SPACE))
             return@setOnClickListener
         }
+
+
+	keyboardBinding.btnDown.setOnTouchListener { v, event ->
+            val action = event.action
+            when(action){
+
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
+                }
+
+
+                MotionEvent.ACTION_MOVE -> { 
+		    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
+		}
+
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DPAD_DOWN))
+                }
+
+                MotionEvent.ACTION_CANCEL -> {
+
+                }
+
+                else ->{
+
+                }
+            }
+            true
+        }
+	/*
         keyboardBinding.btnDown.setOnTouchListener(new View.OnTouchListener()
 	    public boolean onTouch(View v, MotionEvent event){
 	    if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -60,7 +90,7 @@ class MyInputMethodService : InputMethodService() {
 	        return false;
             }
         })
-	/*
+	
 	// クリックイベント
 	mybtn.setOnClickListener(new View.OnClickListener(){
 	  public void onClick(View v){

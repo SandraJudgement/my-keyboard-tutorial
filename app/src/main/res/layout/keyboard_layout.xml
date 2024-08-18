@@ -302,7 +302,7 @@
             android:text="." />
 
        <Button
-            android:id="@+id/btnCtrl"
+            android:id="@+id/btnCtrlR"
             style="@style/btnDarkTheme"
             android:layout_weight="1"
             android:text="Ctrl" />

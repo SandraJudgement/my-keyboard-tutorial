@@ -34,33 +34,33 @@ class MyInputMethodService : InputMethodService() {
 	for((abtnId,akeycode) in aButtonArray){
 	    val button = keyboardBinding.root.findViewById<Button>(abtnId)
             button.setOnTouchListener { v, event ->
-            val action = event.action
-            val inputConnection = currentInputConnection
-            when(action){
+                val action = event.action
+                val inputConnection = currentInputConnection
+                when(action){
 
-                MotionEvent.ACTION_DOWN -> {
-                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+                    MotionEvent.ACTION_DOWN -> {
+                        inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+                    }
+
+
+                    MotionEvent.ACTION_MOVE -> { 
+        	        inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+	            }
+
+                    MotionEvent.ACTION_UP -> {
+                        inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, akeycode))
+                    }
+
+                    MotionEvent.ACTION_CANCEL -> {
+
+                    }
+
+                    else ->{
+
+                    }
                 }
-
-
-                MotionEvent.ACTION_MOVE -> { 
-		    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
-		}
-
-                MotionEvent.ACTION_UP -> {
-                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, akeycode))
-                }
-
-                MotionEvent.ACTION_CANCEL -> {
-
-                }
-
-                else ->{
-
-                }
+                true
             }
-            true
-	    }
 	}
 
         return keyboardBinding.root

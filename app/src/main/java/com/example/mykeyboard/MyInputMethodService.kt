@@ -71,34 +71,34 @@ class MyInputMethodService : InputMethodService() {
             }
             true
         }
-	/*
-        keyboardBinding.btnDown.setOnTouchListener(new View.OnTouchListener()
-	    public boolean onTouch(View v, MotionEvent event){
-	    if (event.getAction() == MotionEvent.ACTION_DOWN) {
-	        //押したとき
-                inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
-	    } 
-            else if (event.getAction() == MotionEvent.ACTION_UP) {
-                //離したとき
-                inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_UP))
+	keyboardBinding.btnCtrl.setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_CTRL_RIGHT))
+                }
+
+
+                MotionEvent.ACTION_MOVE -> { 
+		    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_CTRL_RIGHT))
+		}
+
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_CTRL_RIGHT))
+                }
+
+                MotionEvent.ACTION_CANCEL -> {
+
+                }
+
+                else ->{
+
+                }
             }
-	    // trueにすると他のリスナーが呼ばれない
-	    return false;
-	}})
-      	// 長押しイベント
-	keyboardBinding.btnDown.setOnLongClickListener(new View.OnLongClickListener(){
-	    public boolean onLongClick(View v){
-                inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
-	        return false;
-            }
-        })
-	
-	// クリックイベント
-	mybtn.setOnClickListener(new View.OnClickListener(){
-	  public void onClick(View v){
-	  }
-	});
-	    */
+            true
+		}
 
         return keyboardBinding.root
     }

@@ -290,6 +290,12 @@
             android:text="Space" />
 
         <Button
+            android:id="@+id/btnDown"
+            style="@style/btnDarkTheme"
+            android:layout_weight="5"
+            android:text="↓" />
+
+        <Button
             android:id="@+id/btnDot"
             style="@style/btnLightTheme"
             android:layout_weight="1"

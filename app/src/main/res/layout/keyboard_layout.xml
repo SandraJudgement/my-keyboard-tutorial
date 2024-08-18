@@ -286,7 +286,7 @@
         <Button
             android:id="@+id/btnSpace"
             style="@style/btnDarkTheme"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:text="Space" />
 
         <Button
@@ -301,10 +301,16 @@
             android:layout_weight="1"
             android:text="." />
 
+       <Button
+            android:id="@+id/btnCtrl"
+            style="@style/btnDarkTheme"
+            android:layout_weight="1"
+            android:text="Ctrl" />
+        
         <Button
             android:id="@+id/btnEnter"
             style="@style/btnDarkTheme"
-            android:layout_weight="3"
-            android:text="Enter" />
+            android:layout_weight="1"
+            android:text="Etr" />
     </LinearLayout>
 </LinearLayout>

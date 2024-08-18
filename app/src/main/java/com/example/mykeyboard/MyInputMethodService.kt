@@ -40,6 +40,27 @@ class MyInputMethodService : InputMethodService() {
             inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_SPACE))
             return@setOnClickListener
         }
+        keyboardBinding.btnDown.setOnTouchListener(new View.OnTouchListener(){
+	  public boolean onTouch(View v, MotionEvent event){
+	    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            //押したとき
+            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
+	    } 
+          else if (event.getAction() == MotionEvent.ACTION_UP) {
+            //離したとき
+            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_UP))
+	    }
+	    // trueにすると他のリスナーが呼ばれない
+	    return false;
+	  }
+      })
+      	// 長押しイベント
+	keyboardBinding.btnDown.setOnLongClickListener(new View.OnLongClickListener(){
+	  public boolean onLongClick(View v){
+            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
+	    return false;
+	  }
+      })
 
         return keyboardBinding.root
     }

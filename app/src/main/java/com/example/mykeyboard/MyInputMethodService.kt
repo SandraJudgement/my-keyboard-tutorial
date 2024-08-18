@@ -54,7 +54,7 @@ class MyInputMethodService : InputMethodService() {
 	    return false;
 	}})
       	// 長押しイベント
-	keyboardBinding.btnDown.setOnLongClickListener(new View.OnLongClickListener{
+	keyboardBinding.btnDown.setOnLongClickListener(new View.OnLongClickListener(){
 	    public boolean onLongClick(View v){
                 inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DPAD_DOWN))
 	        return false;

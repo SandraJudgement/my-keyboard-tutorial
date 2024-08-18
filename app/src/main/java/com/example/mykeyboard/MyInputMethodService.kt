@@ -61,6 +61,13 @@ class MyInputMethodService : InputMethodService() {
 	    return false;
 	  }
       })
+	/*
+	// クリックイベント
+	mybtn.setOnClickListener(new View.OnClickListener(){
+	  public void onClick(View v){
+	  }
+	});
+	    */
 
         return keyboardBinding.root
     }

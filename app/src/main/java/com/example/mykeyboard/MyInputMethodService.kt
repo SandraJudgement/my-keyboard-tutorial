@@ -44,6 +44,7 @@ class MyInputMethodService : InputMethodService() {
 
 	keyboardBinding.btnDown.setOnTouchListener { v, event ->
             val action = event.action
+            val inputConnection = currentInputConnection
             when(action){
 
                 MotionEvent.ACTION_DOWN -> {

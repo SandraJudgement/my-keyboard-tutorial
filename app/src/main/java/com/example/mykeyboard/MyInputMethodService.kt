@@ -4,6 +4,7 @@ import android.inputmethodservice.InputMethodService
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
+import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {

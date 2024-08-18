@@ -19,7 +19,7 @@
             style="@style/btnLightTheme"
             android:layout_weight="1"
             android:text="1"
-            android:text="@int/8"/>
+            android:akeynum="@int/8"/>
 
         <Button
             android:id="@+id/btn2"

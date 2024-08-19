@@ -30,7 +30,7 @@
         android:orientation="horizontal"
         >
     
-        <Button android:id="@+id/btnF1" style="@style/btnLightTheme" android:layout_weight="1dp" android:text="F1" />
+        <Button android:id="@+id/btnF1" style="@style/btnLightTheme" android:layout_weight="1" android:text="F1" />
         <Button android:id="@+id/btnF2" style="@style/btnLightTheme" android:layout_weight="1" android:text="F2" />
         <Button android:id="@+id/btnF3" style="@style/btnLightTheme" android:layout_weight="1" android:text="F3" />
         <Button android:id="@+id/btnF4" style="@style/btnLightTheme" android:layout_weight="1" android:text="F4" />

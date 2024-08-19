@@ -25,12 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginHorizontal="4dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="10">
+        >
     
-        <Button android:id="@+id/btnF1" style="@style/btnLightTheme" android:layout_weight="8.333%" android:text="F1" />
+        <Button android:id="@+id/btnF1" style="@style/btnLightTheme" android:layout_weight="1dp" android:text="F1" />
         <Button android:id="@+id/btnF2" style="@style/btnLightTheme" android:layout_weight="1" android:text="F2" />
         <Button android:id="@+id/btnF3" style="@style/btnLightTheme" android:layout_weight="1" android:text="F3" />
         <Button android:id="@+id/btnF4" style="@style/btnLightTheme" android:layout_weight="1" android:text="F4" />

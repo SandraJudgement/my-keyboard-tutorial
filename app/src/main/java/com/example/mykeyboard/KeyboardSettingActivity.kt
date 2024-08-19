@@ -1,3 +1,4 @@
+package com.example.mykeyboard
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -78,7 +78,7 @@
         android:orientation="horizontal"
         android:weightSum="10">
 
-        <Button android:id="@+id/btnTab)" style="@style/btnLightTheme" android:layout_weight="1" android:text="Tab" />
+        <Button android:id="@+id/btnTab" style="@style/btnLightTheme" android:layout_weight="1" android:text="Tab" />
         <Button android:id="@+id/btnQ" style="@style/btnLightTheme" android:layout_weight="1" android:text="q" />
         <Button android:id="@+id/btnW" style="@style/btnLightTheme" android:layout_weight="1" android:text="w" />
         <Button android:id="@+id/btnE" style="@style/btnLightTheme" android:layout_weight="1" android:text="e" />

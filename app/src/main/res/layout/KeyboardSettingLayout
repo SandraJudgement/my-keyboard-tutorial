@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/blue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="サブ画面だよ"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/button_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="メイン画面へ遷移する"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

@@ -88,6 +88,10 @@ class MyInputMethodService : InputMethodService() {
                     true
                 }
 	}
+	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
+            
+            return@setOnClickListener
+	}
 
         return keyboardBinding.root
     }

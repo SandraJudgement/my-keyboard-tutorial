@@ -8,6 +8,9 @@ import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
+    override fun onCreate() {
+        super.onCreate();
+	}
     override fun onCreateInputView(): View {
         val keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	
@@ -84,6 +87,9 @@ class MyInputMethodService : InputMethodService() {
 	}
 
         return keyboardBinding.root
+    }
+    override fun onDestroy() {
+        super.onDestroy();
     }
     data class aButtonData(val abtnId: Int, val akeycode: Int) 
 }

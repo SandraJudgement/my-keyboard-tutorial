@@ -144,9 +144,10 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
         <Button android:id="@+id/btnCtrlL" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Ctrl" />
         <Button android:id="@+id/btnAltL" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Alt" />
-        <Button android:id="@+id/btnSpace" style="@style/btnDarkTheme" android:layout_weight="2" android:text="Space" />
+        <Button android:id="@+id/btnSpace" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Space" />
         <Button android:id="@+id/btnEquals" style="@style/btnLightTheme" android:layout_weight="1" android:text="=" />
         <Button android:id="@+id/btnBackSlash" style="@style/btnLightTheme" android:layout_weight="1" android:text="\\" />
         <Button android:id="@+id/btnPlus" style="@style/btnLightTheme" android:layout_weight="1" android:text="+" />

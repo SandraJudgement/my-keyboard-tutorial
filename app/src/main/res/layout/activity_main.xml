@@ -54,5 +54,16 @@
             android:text="@string/choose_keyboard"
             android:textAllCaps="false"
             app:cornerRadius="14dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKeyboardSetting"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#F69A4D"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/keyboard_setting"
+            android:textAllCaps="false"
+            app:cornerRadius="14dp" />
     </LinearLayout>
 </LinearLayout>

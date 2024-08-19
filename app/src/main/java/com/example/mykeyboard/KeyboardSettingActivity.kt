@@ -1,3 +1,5 @@
+import androidx.appcompat.app.AppCompatActivity
+
 class KeyboardSettingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

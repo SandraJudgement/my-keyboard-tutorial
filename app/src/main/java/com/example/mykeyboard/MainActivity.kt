@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+            btnKeyboardSetting.setOnClickListener {
+                if (!isKeyboardEnabled()) {
+                    val intent = Intent(this, KeyboardSettingActivity::class.java)
+                    startActivity(intent)
+                }
+            }
         }
     }
 

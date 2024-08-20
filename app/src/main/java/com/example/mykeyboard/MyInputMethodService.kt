@@ -107,13 +107,12 @@ class MyInputMethodService : InputMethodService() {
             layout.removeAllViews()
  
             // test_sub.xmlに変更する
-            var targetlayout : LinearLayout
             if(nowKeyboardLayout == 0){
-                getLayoutInflater().inflate(R.layout.gamekeylayout0_content,layout)
+                getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 1
 	    }
             else if(nowKeyboardLayout == 1){
-                getLayoutInflater().inflate(R.layout.gamekeylayout0_content,layout)
+                getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
 
 	    }

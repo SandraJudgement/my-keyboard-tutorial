@@ -89,17 +89,15 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
-            /*
 	    // コンテンツ部分のLayoutを取ってくる
-            var layout = keyboardBinding.root.findViewById(R.id.keylayout_content)
+            var layout = KeyboardLayoutBinding.findViewById(R.id.keylayout_content)
         
             // 内容を全部消す
             layout.removeAllViews()
  
             // test_sub.xmlに変更する
             getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
-	    */
-            KeyboardLayoutBinding.inflate(R.layout.gamekeyboard_layout)
+	    
             //setContentView(R.layout.gamekeyboard_layout)
             return@setOnClickListener
 	}

@@ -89,7 +89,14 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
-            
+	    // コンテンツ部分のLayoutを取ってくる
+            //LinearLayout layout = (LinearLayout)findViewById(R.id.test_contents);
+        
+            // 内容を全部消す
+            //layout.removeAllViews();
+ 
+            // test_sub.xmlに変更する
+            getLayoutInflater().inflate(R.layout.gamekeyboard_layout);
             return@setOnClickListener
 	}
 

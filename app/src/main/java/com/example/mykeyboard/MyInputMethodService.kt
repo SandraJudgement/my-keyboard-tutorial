@@ -101,6 +101,8 @@ class MyInputMethodService : InputMethodService() {
             if(nowKeyboardLayout == 0)
                 layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
             else if(nowKeyboardLayout == 1)
+                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
+            else if(nowKeyboardLayout == 2)
                 layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.gamekeylayout0_content)
         
             // 内容を全部消す
@@ -112,9 +114,12 @@ class MyInputMethodService : InputMethodService() {
 		nowKeyboardLayout = 1
 	    }
             else if(nowKeyboardLayout == 1){
+                getLayoutInflater().inflate(R.layout.testlayout,layout)
+		nowKeyboardLayout = 0
+	    }
+            else if(nowKeyboardLayout == 2){
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
-
 	    }
             return@setOnClickListener
 	}

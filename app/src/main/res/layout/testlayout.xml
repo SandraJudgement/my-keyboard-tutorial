@@ -4,10 +4,36 @@
         android:layout_width="500dip"
         android:layout_height="300dip"
         android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnShiftL" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
+        <Button android:id="@+id/btnZ" style="@style/btnLightTheme" android:layout_weight="1" android:text="z" />
+        <Button android:id="@+id/btnX" style="@style/btnLightTheme" android:layout_weight="1" android:text="x" />
+        <Button android:id="@+id/btnC" style="@style/btnLightTheme" android:layout_weight="1" android:text="c" />
+        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
+        <Button android:id="@+id/btnComma" style="@style/btnLightTheme" android:layout_weight="1" android:text="," />
+        <Button android:id="@+id/btnPeriod" style="@style/btnLightTheme" android:layout_weight="1" android:text="." />
+        <Button android:id="@+id/btnUp" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↑" />
+        <Button android:id="@+id/btnShiftR" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="50dip"
             android:layout_height="50dip"
             android:text="２ページ目です"
             />
-        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
+    </LinearLayout>
 </LinearLayout>

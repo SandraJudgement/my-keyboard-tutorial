@@ -115,7 +115,7 @@ class MyInputMethodService : InputMethodService() {
 	    }
             else if(nowKeyboardLayout == 1){
                 getLayoutInflater().inflate(R.layout.testlayout,layout)
-		nowKeyboardLayout = 0
+		nowKeyboardLayout = 2
 	    }
             else if(nowKeyboardLayout == 2){
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)

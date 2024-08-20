@@ -117,6 +117,11 @@ class MyInputMethodService : InputMethodService() {
                 // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 2
+		    
+	        getLayoutInflater().btnShiftKeyboardLayout.setOnClickListener {
+                val inputConnection = currentInputConnection
+                inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+    	        }
 	    }
             else if(nowKeyboardLayout == 2){
 		// コンテンツ部分のLayoutを取ってくる
@@ -128,10 +133,6 @@ class MyInputMethodService : InputMethodService() {
                 // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
-	    }
-	    keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
-            val inputConnection = currentInputConnection
-            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
 	    }
             return@setOnClickListener
 	}

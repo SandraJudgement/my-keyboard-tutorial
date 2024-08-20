@@ -15,6 +15,8 @@ import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
     var nowKeyboardLayout = 0
+    var layout : LinearLayout
+    var targetlayout : LinearLayout
     /*
     override fun onCreate() {
         super.onCreate();
@@ -97,7 +99,6 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-	    var layout : LinearLayout
             if(nowKeyboardLayout == 0)
                 layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
             else if(nowKeyboardLayout == 1)
@@ -107,7 +108,6 @@ class MyInputMethodService : InputMethodService() {
             layout.removeAllViews()
  
             // test_sub.xmlに変更する
-	    var targetlayout : LinearLayout
             if(nowKeyboardLayout == 0){
                 getLayoutInflater().inflate(R.layout.gamekeylayout0_content,layout)
 		nowKeyboardLayout = 1

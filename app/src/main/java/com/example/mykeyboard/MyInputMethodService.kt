@@ -2,13 +2,14 @@ package com.example.mykeyboard
 
 
 import android.os.Bundle
+import android.app.Activity
 
 import android.inputmethodservice.InputMethodService
 import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
+import android.widget.LinearLayout;
 import android.view.MotionEvent
-import kotlinx.android.synthetic.main.activity_sample.*
 
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
@@ -95,7 +96,7 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            var layout = findViewById(R.id.keylayout_content)
+            val layout = (LinearLayout)findViewById(R.id.keylayout_content)
         
             // 内容を全部消す
             layout.removeAllViews()

@@ -129,7 +129,10 @@ class MyInputMethodService : InputMethodService() {
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
 	    }
-	    onCreateInputView()
+	    keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
+            val inputConnection = currentInputConnection
+            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+	    }
             return@setOnClickListener
 	}
 

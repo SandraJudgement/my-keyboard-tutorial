@@ -99,7 +99,8 @@ class MyInputMethodService : InputMethodService() {
             // test_sub.xmlに変更する
             getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 	    */
-            setContentView(R.layout.gamekeyboard_layout)
+            KeyboardLayoutBinding.inflate(R.layout.gamekeyboard_layout)
+            //setContentView(R.layout.gamekeyboard_layout)
             return@setOnClickListener
 	}
 

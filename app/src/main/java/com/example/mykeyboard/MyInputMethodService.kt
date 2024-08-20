@@ -129,6 +129,7 @@ class MyInputMethodService : InputMethodService() {
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
 	    }
+	    onCreateInputView()
             return@setOnClickListener
 	}
 

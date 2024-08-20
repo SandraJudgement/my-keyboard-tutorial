@@ -9,4 +9,5 @@
             android:layout_height="match_parent"
             android:text="２ページ目です"
             />
+        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
 </LinearLayout>

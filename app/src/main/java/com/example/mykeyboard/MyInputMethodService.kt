@@ -91,7 +91,7 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            var layout = keyboardBinding.root.findViewById(R.id.keylayout_content)
+            var layout = findViewById(R.id.keylayout_content)
         
             // 内容を全部消す
             layout.removeAllViews()

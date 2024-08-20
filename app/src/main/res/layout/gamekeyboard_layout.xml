@@ -1,12 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/test_contents"
-        android:layout_width="500dip"
-        android:layout_height="300dip"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="２ページ目です"
-            />
+    android:id="@+id/gamekeylayout0_content"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+    
+        <Button android:id="@+id/btn" style="@style/btnLightTheme" android:layout_weight="1" android:text="" />
+    </LinearLayout>
+!-->
+
+
+
+
+    
+
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnQ" style="@style/btnLightTheme" android:layout_weight="1" android:text="q" />
+        <Button android:id="@+id/btnW" style="@style/btnLightTheme" android:layout_weight="1" android:text="w" />
+        <Space android:layout_weight="1"/>
+        <Space android:layout_weight="1"/>
+        <Button android:id="@+id/btnI" style="@style/btnLightTheme" android:layout_weight="1" android:text="i" />
+        <Space android:layout_weight="1"/>
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnA" style="@style/btnLightTheme" android:layout_weight="1" android:text="a" />
+        <Button android:id="@+id/btnS" style="@style/btnLightTheme" android:layout_weight="1" android:text="s" />
+        <Space android:layout_weight="1"/>
+        <Button android:id="@+id/btnJ" style="@style/btnLightTheme" android:layout_weight="1" android:text="j" />
+        <Button android:id="@+id/btnK" style="@style/btnLightTheme" android:layout_weight="1" android:text="k" />
+        <Button android:id="@+id/btnL" style="@style/btnLightTheme" android:layout_weight="1" android:text="l" />
+    </LinearLayout>
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnZ" style="@style/btnLightTheme" android:layout_weight="1" android:text="z" />
+        <Button android:id="@+id/btnX" style="@style/btnLightTheme" android:layout_weight="1" android:text="x" />
+        <Button android:id="@+id/btnC" style="@style/btnLightTheme" android:layout_weight="1" android:text="c" />
+        <Button android:id="@+id/btnV" style="@style/btnLightTheme" android:layout_weight="1" android:text="v" />
+        <Button android:id="@+id/btnUp" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↑" />
+        <Space android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="3dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
+        <Button android:id="@+id/btnSpace" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Space" />
+        <Button android:id="@+id/btnEnter" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Etr" />
+        <Button android:id="@+id/btnLeft" style="@style/btnDarkTheme" android:layout_weight="1" android:text="←" />
+        <Button android:id="@+id/btnDown" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↓" />
+        <Button android:id="@+id/btnRight" style="@style/btnDarkTheme" android:layout_weight="1" android:text="→" />
+    </LinearLayout>
 </LinearLayout>

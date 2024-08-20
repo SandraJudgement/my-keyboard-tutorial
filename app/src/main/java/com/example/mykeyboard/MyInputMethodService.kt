@@ -90,7 +90,7 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            LinearLayout layout = (LinearLayout)findViewById(R.id.keylayout_content);
+            LinearLayout layout = findViewById(R.id.keylayout_content);
         
             // 内容を全部消す
             layout.removeAllViews();

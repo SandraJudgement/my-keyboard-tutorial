@@ -8,7 +8,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.Button
 import android.view.MotionEvent
-
+import kotlinx.android.synthetic.main.activity_sample.*
 
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 

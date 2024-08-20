@@ -96,28 +96,36 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
-	    // コンテンツ部分のLayoutを取ってくる
-            var layout : LinearLayout = LinearLayout(null)
-            if(nowKeyboardLayout == 0)
-                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
-            else if(nowKeyboardLayout == 1)
-                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
-            else if(nowKeyboardLayout == 2)
-                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.gamekeylayout0_content)
-        
-            // 内容を全部消す
-            layout.removeAllViews()
- 
-            // test_sub.xmlに変更する
             if(nowKeyboardLayout == 0){
+	        // コンテンツ部分のLayoutを取ってくる
+                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
+		
+                // 内容を全部消す
+                layout.removeAllViews()
+		
+                // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 1
 	    }
             else if(nowKeyboardLayout == 1){
+		// コンテンツ部分のLayoutを取ってくる
+                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
+		
+                // 内容を全部消す
+                layout.removeAllViews()
+		
+                // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.testlayout,layout)
 		nowKeyboardLayout = 2
 	    }
             else if(nowKeyboardLayout == 2){
+		// コンテンツ部分のLayoutを取ってくる
+                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.gamekeylayout0_content)
+		
+                // 内容を全部消す
+                layout.removeAllViews()
+		
+                // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
 		nowKeyboardLayout = 0
 	    }

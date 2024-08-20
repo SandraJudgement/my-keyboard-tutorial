@@ -14,6 +14,7 @@ import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
+    var nowKeyboardLayout = 0
     /*
     override fun onCreate() {
         super.onCreate();
@@ -96,14 +97,26 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            val layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
+	    var layout : LinearLayout = null
+            if(nowKeyboardLayout == 0)
+                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
+            else if(nowKeyboardLayout == 1)
+                layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.gamekeylayout0_content)
         
             // 内容を全部消す
             layout.removeAllViews()
  
             // test_sub.xmlに変更する
-            getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
-	    
+	    var targetlayout : LinearLayout = null
+            if(nowKeyboardLayout == 0){
+                getLayoutInflater().inflate(R.layout.gamekeylayout0_content,layout)
+		nowKeyboardLayout = 1
+	    }
+            else if(nowKeyboardLayout == 1){
+                getLayoutInflater().inflate(R.layout.gamekeylayout0_content,layout)
+		nowKeyboardLayout = 0
+
+	    }
             return@setOnClickListener
 	}
 

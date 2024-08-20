@@ -5,8 +5,8 @@
         android:layout_height="300dip"
         android:orientation="vertical">
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
             android:text="２ページ目です"
             />
         <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />

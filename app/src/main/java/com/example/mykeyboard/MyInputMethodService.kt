@@ -96,7 +96,7 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            val layout = (LinearLayout)findViewById(R.id.keylayout_content)
+            val layout = findViewById(R.id.keylayout_content) as LinearLayout
         
             // 内容を全部消す
             layout.removeAllViews()

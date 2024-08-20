@@ -1,7 +1,7 @@
 package com.example.mykeyboard
 
 
-import android.content.Intent
+import android.os.Bundle
 
 import android.inputmethodservice.InputMethodService
 import android.view.KeyEvent

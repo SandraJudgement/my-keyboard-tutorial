@@ -96,7 +96,7 @@ class MyInputMethodService : InputMethodService() {
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
 	    // コンテンツ部分のLayoutを取ってくる
-            val layout = findViewById(R.id.keylayout_content) as LinearLayout
+            val layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
         
             // 内容を全部消す
             layout.removeAllViews()
@@ -104,7 +104,6 @@ class MyInputMethodService : InputMethodService() {
             // test_sub.xmlに変更する
             getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 	    
-            //setContentView(R.layout.gamekeyboard_layout)
             return@setOnClickListener
 	}
 

@@ -117,10 +117,8 @@ class MyInputMethodService : InputMethodService() {
                 // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 2
-		    
-	        getLayoutInflater().btnShiftKeyboardLayout.setOnClickListener {
-                val inputConnection = currentInputConnection
-                inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+		
+		setButtonAction(keyboardBinding)
     	        }
 	    }
             else if(nowKeyboardLayout == 2){
@@ -139,6 +137,12 @@ class MyInputMethodService : InputMethodService() {
 
         return keyboardBinding.root
     }
+    fun setButtonAction(targetview : View){
+        targetview.btnZ.setOnClickListener {
+        val inputConnection = currentInputConnection
+        inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+    }
+    
     /*
     override fun onDestroy() {
         super.onDestroy();

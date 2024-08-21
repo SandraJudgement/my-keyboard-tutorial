@@ -136,8 +136,8 @@ class MyInputMethodService : InputMethodService() {
 
         return keyboardBinding.root
     }
-    fun setButtonAction(targetview : View){
-        targetview.btnZ.setOnClickListener {
+    fun setButtonAction(keyboardBinding : KeyboardLayoutBinding){
+        keyboardBinding.btnZ.setOnClickListener {
         val inputConnection = currentInputConnection
         inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
 	}

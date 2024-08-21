@@ -23,7 +23,7 @@ class MyInputMethodService : InputMethodService() {
     */
     override fun onCreateInputView(): View {
         val keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
-	val TestLayoutBinding = KeyboardLayoutBinding.inflate(R.layout.testlayout)
+	val tesLayoutBinding = TestLayoutBinding.inflate(R.layout.testlayout)
 	val aButtonArray = arrayOf(
 	    aButtonData(R.id.btn0,7),aButtonData(R.id.btn1,8),aButtonData(R.id.btn2,9),aButtonData(R.id.btn3,10),aButtonData(R.id.btn4,11),
 	    aButtonData(R.id.btn5,12),aButtonData(R.id.btn6,13),aButtonData(R.id.btn7,14),aButtonData(R.id.btn8,15),aButtonData(R.id.btn9,16),

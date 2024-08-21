@@ -119,7 +119,6 @@ class MyInputMethodService : InputMethodService() {
 		nowKeyboardLayout = 2
 		
 		setButtonAction(keyboardBinding)
-    	        }
 	    }
             else if(nowKeyboardLayout == 2){
 		// コンテンツ部分のLayoutを取ってくる
@@ -141,6 +140,7 @@ class MyInputMethodService : InputMethodService() {
         targetview.btnZ.setOnClickListener {
         val inputConnection = currentInputConnection
         inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+	}
     }
     
     /*

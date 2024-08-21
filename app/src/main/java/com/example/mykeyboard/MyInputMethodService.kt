@@ -15,6 +15,7 @@ import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 import com.example.mykeyboard.databinding.TestLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
+    private lateinit var testLayoutBinding: TestLayoutBinding
     var nowKeyboardLayout = 0
     /*
     override fun onCreate() {

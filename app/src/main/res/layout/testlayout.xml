@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/testlayout_content"
-        android:layout_width="500dip"
+        android:layout_width="match_parent"
         android:layout_height="300dip"
         android:orientation="vertical">
     <LinearLayout
@@ -12,15 +12,15 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button android:id="@+id/btnShiftL" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
-        <Button android:id="@+id/btnZ" style="@style/btnLightTheme" android:layout_weight="1" android:text="z" />
-        <Button android:id="@+id/btnX" style="@style/btnLightTheme" android:layout_weight="1" android:text="x" />
-        <Button android:id="@+id/btnC" style="@style/btnLightTheme" android:layout_weight="1" android:text="c" />
-        <Button android:id="@+id/btnShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
-        <Button android:id="@+id/btnComma" style="@style/btnLightTheme" android:layout_weight="1" android:text="," />
-        <Button android:id="@+id/btnPeriod" style="@style/btnLightTheme" android:layout_weight="1" android:text="." />
-        <Button android:id="@+id/btnUp" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↑" />
-        <Button android:id="@+id/btnShiftR" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
+        <Button android:id="@+id/btnaaa_ShiftL" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
+        <Button android:id="@+id/btnaaa_Z" style="@style/btnLightTheme" android:layout_weight="1" android:text="z" />
+        <Button android:id="@+id/btnaaa_X" style="@style/btnLightTheme" android:layout_weight="1" android:text="x" />
+        <Button android:id="@+id/btnaaa_C" style="@style/btnLightTheme" android:layout_weight="1" android:text="c" />
+        <Button android:id="@+id/btnaaa_ShiftKeyboardLayout" style="@style/btnDarkTheme" android:layout_weight="1" android:text="ShKB" />
+        <Button android:id="@+id/btnaaa_Comma" style="@style/btnLightTheme" android:layout_weight="1" android:text="," />
+        <Button android:id="@+id/btnaaa_Period" style="@style/btnLightTheme" android:layout_weight="1" android:text="." />
+        <Button android:id="@+id/btnaaa_Up" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↑" />
+        <Button android:id="@+id/btnaaa_ShiftR" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Shift" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

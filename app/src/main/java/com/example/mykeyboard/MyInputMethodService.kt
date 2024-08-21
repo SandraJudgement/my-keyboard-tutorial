@@ -12,10 +12,8 @@ import android.widget.LinearLayout;
 import android.view.MotionEvent
 
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
-import com.example.mykeyboard.databinding.TestLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
-    private lateinit var testLayoutBinding : TestLayoutBinding
     var nowKeyboardLayout = 0
     /*
     override fun onCreate() {
@@ -29,7 +27,7 @@ class MyInputMethodService : InputMethodService() {
 	    aButtonData(R.id.btn0,7),aButtonData(R.id.btn1,8),aButtonData(R.id.btn2,9),aButtonData(R.id.btn3,10),aButtonData(R.id.btn4,11),
 	    aButtonData(R.id.btn5,12),aButtonData(R.id.btn6,13),aButtonData(R.id.btn7,14),aButtonData(R.id.btn8,15),aButtonData(R.id.btn9,16),
 	    
-	    aButtonData(TestLayoutBindingR.id.btnUp,19),
+	    aButtonData(R.id.btnUp,19),
 	    aButtonData(R.id.btnDown,20),
 	    aButtonData(R.id.btnLeft,21),
 	    aButtonData(R.id.btnRight,22),
@@ -139,7 +137,7 @@ class MyInputMethodService : InputMethodService() {
         return keyboardBinding.root
     }
     fun setButtonAction(keyboardBinding : KeyboardLayoutBinding){
-        TestLayoutBinding.btnaaa_Z.setOnClickListener {
+        getLayoutInflater().btnaaa_Z.setOnClickListener {
         val inputConnection = currentInputConnection
         inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
 	}

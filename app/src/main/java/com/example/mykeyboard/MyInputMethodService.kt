@@ -104,7 +104,7 @@ class MyInputMethodService : InputMethodService() {
                 layout.removeAllViews()
 		
                 // test_sub.xmlに変更する
-                var aaa =　getLayoutInflater().inflate(R.layout.testlayout,layout)
+                var aaa = getLayoutInflater().inflate(R.layout.testlayout,layout)
 		nowKeyboardLayout = 1
 	    }
             else if(nowKeyboardLayout == 1){

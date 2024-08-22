@@ -161,7 +161,7 @@ class MyInputMethodService : InputMethodService() {
                     true
                 }
 	}
-	KeyLayout0.findViewById<Button>(R.id.btn1_ShiftKeyboardLayout).setOnClickListener {
+	KeyLayout0.findViewById<Button>(R.id.btnShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}

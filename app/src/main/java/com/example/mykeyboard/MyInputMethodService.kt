@@ -23,6 +23,9 @@ class MyInputMethodService : InputMethodService() {
     */
     override fun onCreateInputView(): View {
             //keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	    var KeyLayout0 = keyboardBinding.root.findViewById(R.id.keylayout0)
+	    var KeyLayout1 = keyboardBinding.root.findViewById(R.id.keylayout1)
+	    var KeyLayout2 = keyboardBinding.root.findViewById(R.id.keylayout2)
 	val aButtonArray = arrayOf(
 	    aButtonData(R.id.btn0,7),aButtonData(R.id.btn1,8),aButtonData(R.id.btn2,9),aButtonData(R.id.btn3,10),aButtonData(R.id.btn4,11),
 	    aButtonData(R.id.btn5,12),aButtonData(R.id.btn6,13),aButtonData(R.id.btn7,14),aButtonData(R.id.btn8,15),aButtonData(R.id.btn9,16),
@@ -59,13 +62,16 @@ class MyInputMethodService : InputMethodService() {
 	    aButtonData(R.id.btnCapsLock,115),
 	    aButtonData(R.id.btnF1,131),aButtonData(R.id.btnF2,132),aButtonData(R.id.btnF3,133),aButtonData(R.id.btnF4,134),aButtonData(R.id.btnF5,135),
 	    aButtonData(R.id.btnF6,136),aButtonData(R.id.btnF7,137),aButtonData(R.id.btnF8,138),aButtonData(R.id.btnF9,139),aButtonData(R.id.btnF10,140),
-	    aButtonData(R.id.btnF11,141),aButtonData(R.id.btnF12,142),
-
-		
+	    aButtonData(R.id.btnF11,141),aButtonData(R.id.btnF12,142)
+            /*
+	    aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),
+	    */
+	)
+	val aButton1Array = arrayOf(
 	    aButtonData(R.id.btn1_x,52),
-	    aButtonData(R.id.btn1_z,54),
-
-            
+	    aButtonData(R.id.btn1_z,54)
+	)
+	val aButton2Array = arrayOf(
 	    aButtonData(R.id.btn2_Up,19),
             aButtonData(R.id.btn2_Down,20),
 	    aButtonData(R.id.btn2_Left,21),
@@ -78,10 +84,6 @@ class MyInputMethodService : InputMethodService() {
             aButtonData(R.id.btn2_Z,54),
 	    aButtonData(R.id.btn2_Space,62),
 	    aButtonData(R.id.btn2_Enter,66)
-		
-            /*
-	    aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),
-	    */
 	)
 	for((abtnId,akeycode) in aButtonArray){
 	    val tbutton = keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
@@ -92,22 +94,17 @@ class MyInputMethodService : InputMethodService() {
                         MotionEvent.ACTION_DOWN -> {
                             inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
                         }
-
                         /*
                         MotionEvent.ACTION_MOVE -> { 
         	            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
 	                }
 		        */
-
                         MotionEvent.ACTION_UP -> {
                             inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, akeycode))
                         }
-
                         MotionEvent.ACTION_CANCEL -> {
-
                         }
                         else ->{
-
                         }
                     }
                     true
@@ -117,11 +114,11 @@ class MyInputMethodService : InputMethodService() {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}
-	keyboardBinding.btn1_ShiftKeyboardLayout.setOnClickListener {
+	KeyLayout1.btn1_ShiftKeyboardLayout.setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}
-	keyboardBinding.btn2_ShiftKeyboardLayout.setOnClickListener {
+	KeyLayout2.btn2_ShiftKeyboardLayout.setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}
@@ -129,9 +126,9 @@ class MyInputMethodService : InputMethodService() {
         return keyboardBinding.root
     }
     fun SetShiftKeyboard() {
-	    var KeyLayout0 = findViewById(R.id.keylayout0)
-	    var KeyLayout1 = findViewById(R.id.keylayout1)
-	    var KeyLayout2 = findViewById(R.id.keylayout2)
+	    var KeyLayout0 = keyboardBinding.root.findViewById(R.id.keylayout0)
+	    var KeyLayout1 = keyboardBinding.root.findViewById(R.id.keylayout1)
+	    var KeyLayout2 = keyboardBinding.root.findViewById(R.id.keylayout2)
             nowKeyboardLayout = 0
             if (KeyLayout0.getVisibility() == View.VISIBLE) {
             nowKeyboardLayout = 0b00000001 or nowKeyboardLayout

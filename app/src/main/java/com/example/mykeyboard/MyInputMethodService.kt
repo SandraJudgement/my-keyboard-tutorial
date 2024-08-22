@@ -87,7 +87,7 @@ class MyInputMethodService : InputMethodService() {
 	)
 
 	for((abtnId,akeycode) in aButtonArray){
-	    val tbutton = KeyLayout0.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+	    val tbutton = KeyLayout0.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
                     val action = event.action
                     val inputConnection = currentInputConnection
                     when(action){
@@ -112,7 +112,7 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	for((abtnId,akeycode) in aButton1Array){
-	    val tbutton = KeyLayout1.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+	    val tbutton = KeyLayout1.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
                     val action = event.action
                     val inputConnection = currentInputConnection
                     when(action){
@@ -137,7 +137,7 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	for((abtnId,akeycode) in aButton2Array){
-	    val tbutton = KeyLayout2.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+	    val tbutton = KeyLayout2.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
                     val action = event.action
                     val inputConnection = currentInputConnection
                     when(action){

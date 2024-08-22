@@ -14,7 +14,6 @@ import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
-    var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
     var nowKeyboardLayout = 0
     /*
     override fun onCreate() {
@@ -22,7 +21,7 @@ class MyInputMethodService : InputMethodService() {
 	}
     */
     override fun onCreateInputView(): View {
-            //keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+            var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	    var KeyLayout0 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout0)
 	    var KeyLayout1 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout1)
 	    var KeyLayout2 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout2)
@@ -162,21 +161,21 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	KeyLayout0.findViewById<Button>(R.id.btnShiftKeyboardLayout).setOnClickListener {
-	    SetShiftKeyboard()
+	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
 	}
 	KeyLayout1.findViewById<Button>(R.id.btn1_ShiftKeyboardLayout).setOnClickListener {
-	    SetShiftKeyboard()
+	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
 	}
 	KeyLayout2.findViewById<Button>(R.id.btn2_ShiftKeyboardLayout).setOnClickListener {
-	    SetShiftKeyboard()
+	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
 	}
 
         return keyboardBinding.root
     }
-    fun SetShiftKeyboard() {
+    fun SetShiftKeyboard(keyboardBinding : KeyboardLayoutBinding) {
 	    var KeyLayout0 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout0)
 	    var KeyLayout1 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout1)
 	    var KeyLayout2 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout2)

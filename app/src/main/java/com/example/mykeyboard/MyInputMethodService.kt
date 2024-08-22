@@ -14,7 +14,7 @@ import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
-    var keyboardBinding : KeyboardLayoutBinding = KeyboardLayoutBinding
+    var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
     var nowKeyboardLayout = 0
     /*
     override fun onCreate() {
@@ -22,7 +22,7 @@ class MyInputMethodService : InputMethodService() {
 	}
     */
     override fun onCreateInputView(): View {
-            keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+            //keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	val aButtonArray = arrayOf(
 	    aButtonData(R.id.btn0,7),aButtonData(R.id.btn1,8),aButtonData(R.id.btn2,9),aButtonData(R.id.btn3,10),aButtonData(R.id.btn4,11),
 	    aButtonData(R.id.btn5,12),aButtonData(R.id.btn6,13),aButtonData(R.id.btn7,14),aButtonData(R.id.btn8,15),aButtonData(R.id.btn9,16),

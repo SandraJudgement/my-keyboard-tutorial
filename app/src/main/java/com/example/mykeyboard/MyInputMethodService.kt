@@ -59,8 +59,11 @@ class MyInputMethodService : InputMethodService() {
 	    aButtonData(R.id.btnCapsLock,115),
 	    aButtonData(R.id.btnF1,131),aButtonData(R.id.btnF2,132),aButtonData(R.id.btnF3,133),aButtonData(R.id.btnF4,134),aButtonData(R.id.btnF5,135),
 	    aButtonData(R.id.btnF6,136),aButtonData(R.id.btnF7,137),aButtonData(R.id.btnF8,138),aButtonData(R.id.btnF9,139),aButtonData(R.id.btnF10,140),
-	    aButtonData(R.id.btnF11,141),aButtonData(R.id.btnF12,142)
+	    aButtonData(R.id.btnF11,141),aButtonData(R.id.btnF12,142),
 	    
+	    aButtonData(R.id.btn1_x,52),aButtonData(R.id.btn1_z,54)
+	    aButtonData(R.id.btn2_x,52),aButtonData(R.id.btn2_z,54)
+		
             /*
 	    aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),
 	    */
@@ -96,59 +99,42 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
-	    mViewGroup = findViewById(R.id.viewsContainer);
-            if (mViewGroup.getVisibility() == View.VISIBLE) {
-                mViewGroup.setVisibility(View.GONE);
+	    var KeyLayout0 = findViewById(R.id.keylayout0)
+	    var KeyLayout1 = findViewById(R.id.keylayout1)
+	    var KeyLayout2 = findViewById(R.id.keylayout2)
+            nowKeyboardLayout = 0
+            if (KeyLayout0.getVisibility() == View.VISIBLE) {
+            nowKeyboardLayout = 0b00000001 or nowKeyboardLayout
             }
-            else {
-                mViewGroup.setVisibility(View.VISIBLE);
-	     }
+            if (KeyLayout1.getVisibility() == View.VISIBLE) {
+            nowKeyboardLayout = 0b00000010 or nowKeyboardLayout
+            }
+            if (KeyLayout2.getVisibility() == View.VISIBLE) {
+            nowKeyboardLayout = 0b00000100 or nowKeyboardLayout
+            }
+	    if (nowKeyboardLayout != 0b00000001 &&
+		nowKeyboardLayout != 0b00000010 &&
+	        nowKeyboardLayout != 0b00000100)
+		nowKeyboardLayout = 0b00000010
             if(nowKeyboardLayout == 0){
-	        // コンテンツ部分のLayoutを取ってくる
-                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
-		
-                // 内容を全部消す
-                layout.removeAllViews()
-		
-                // test_sub.xmlに変更する
-                var targetView = getLayoutInflater().inflate(R.layout.testlayout,layout)
-		nowKeyboardLayout = 1
-		
-		setButtonAction(targetView)
+                KeyLayout0.setVisibility(View.GONE)
+                KeyLayout1.setVisibility(View.VISIBLE)
+                KeyLayout2.setVisibility(View.GONE)
 	    }
             else if(nowKeyboardLayout == 1){
-		// コンテンツ部分のLayoutを取ってくる
-                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
-		
-                // 内容を全部消す
-                layout.removeAllViews()
-		
-                // test_sub.xmlに変更する
-                getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
-		nowKeyboardLayout = 2
+                KeyLayout0.setVisibility(View.GONE)
+                KeyLayout1.setVisibility(View.GONE)
+                KeyLayout2.setVisibility(View.VISIBLE)
 	    }
             else if(nowKeyboardLayout == 2){
-		// コンテンツ部分のLayoutを取ってくる
-                var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.gamekeylayout0_content)
-		
-                // 内容を全部消す
-                layout.removeAllViews()
-		
-                // test_sub.xmlに変更する
-                getLayoutInflater().inflate(R.layout.keyboard_layout,layout)
-		nowKeyboardLayout = 0
+                KeyLayout0.setVisibility(View.VISIBLE)
+                KeyLayout1.setVisibility(View.GONE)
+                KeyLayout2.setVisibility(View.GONE)
 	    }
             return@setOnClickListener
 	}
 
         return keyboardBinding.root
-    }
-    fun setButtonAction(targetView : View) {
-	var alayout = targetView.findViewById<LinearLayout>(R.id.testlayout_content)
-	alayout.btnaaa_Z.setOnClickListener {
-            val inputConnection = currentInputConnection
-            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
-	}
     }
     
     /*

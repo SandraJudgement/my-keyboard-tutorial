@@ -167,8 +167,26 @@
                 android:gravity="center"
                 android:orientation="horizontal">
     
-                <Button android:id="@+id/btnaaa_x" style="@style/btnDarkTheme" android:layout_weight="1" android:text="x" />
-                <Button android:id="@+id/btnaaa_z" style="@style/btnDarkTheme" android:layout_weight="1" android:text="z" />
+                <Button android:id="@+id/btn1_x" style="@style/btnDarkTheme" android:layout_weight="1" android:text="x" />
+                <Button android:id="@+id/btn1_z" style="@style/btnDarkTheme" android:layout_weight="1" android:text="z" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/keylayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="3dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+    
+                <Button android:id="@+id/btn2_x" style="@style/btnDarkTheme" android:layout_weight="1" android:text="x" />
+                <Button android:id="@+id/btn2_z" style="@style/btnDarkTheme" android:layout_weight="1" android:text="z" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

@@ -184,18 +184,18 @@ class MyInputMethodService : InputMethodService() {
 	    var KeyLayout2 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout2)
             nowKeyboardLayout = 0
             if (KeyLayout0.getVisibility() == View.VISIBLE) {
-            nowKeyboardLayout = 0b00000001 or nowKeyboardLayout
+            nowKeyboardLayout = 0b_00000000_00000000_00000000_00000001 or nowKeyboardLayout
             }
             if (KeyLayout1.getVisibility() == View.VISIBLE) {
-            nowKeyboardLayout = 0b00000010 or nowKeyboardLayout
+            nowKeyboardLayout = 0b00000000_00000000_00000000_00000010 or nowKeyboardLayout
             }
             if (KeyLayout2.getVisibility() == View.VISIBLE) {
-            nowKeyboardLayout = 0b00000100 or nowKeyboardLayout
+            nowKeyboardLayout = 0b00000000_00000000_00000000_00000100 or nowKeyboardLayout
             }
-	    if (nowKeyboardLayout != 0b00000001 &&
-		nowKeyboardLayout != 0b00000010 &&
-	        nowKeyboardLayout != 0b00000100)
-		nowKeyboardLayout = 0b00000010
+	    if (nowKeyboardLayout != 0b00000000_00000000_00000000_00000001 &&
+		nowKeyboardLayout != 0b00000000_00000000_00000000_00000010 &&
+	        nowKeyboardLayout != 0b00000000_00000000_00000000_00000100)
+		nowKeyboardLayout = 0b00000000_00000000_00000000_00000010
             if(nowKeyboardLayout == 0){
                 KeyLayout0.setVisibility(View.GONE)
                 KeyLayout1.setVisibility(View.VISIBLE)

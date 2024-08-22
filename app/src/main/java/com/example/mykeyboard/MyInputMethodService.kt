@@ -114,11 +114,11 @@ class MyInputMethodService : InputMethodService() {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}
-	KeyLayout1.btn1_ShiftKeyboardLayout.setOnClickListener {
+	KeyLayout1.findViewById<Button>(btn1_ShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}
-	KeyLayout2.btn2_ShiftKeyboardLayout.setOnClickListener {
+	KeyLayout2.findViewById<Button>(btn2_ShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}

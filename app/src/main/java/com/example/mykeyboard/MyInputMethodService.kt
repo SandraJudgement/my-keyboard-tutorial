@@ -14,7 +14,7 @@ import android.view.MotionEvent
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
-    var keyboardBinding : KeyboardLayoutBinding
+    var keyboardBinding : KeyboardLayoutBinding = KeyboardLayoutBinding
     var nowKeyboardLayout = 0
     /*
     override fun onCreate() {

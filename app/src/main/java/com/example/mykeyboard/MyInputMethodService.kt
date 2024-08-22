@@ -117,7 +117,7 @@ class MyInputMethodService : InputMethodService() {
                 getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 2
 		
-		setButtonAction(keyboardBinding)
+		setButtonAction()
 	    }
             else if(nowKeyboardLayout == 2){
 		// コンテンツ部分のLayoutを取ってくる

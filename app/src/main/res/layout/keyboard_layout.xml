@@ -193,12 +193,12 @@
 
                 <Button android:id="@+id/btn2_Q" style="@style/btnLightTheme" android:layout_weight="1" android:text="q" />
                 <Button android:id="@+id/btn2_W" style="@style/btnLightTheme" android:layout_weight="1" android:text="w" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_IandJ" style="@style/btnLightTheme" android:layout_weight="1" android:text="↖" />
                 <Button android:id="@+id/btn2_I" style="@style/btnLightTheme" android:layout_weight="1" android:text="i" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_IandL" style="@style/btnLightTheme" android:layout_weight="1" android:text="↗" />
+                <Button android:id="@+id/btn2_8and4" style="@style/btnLightTheme" android:layout_weight="1" android:text="↖" />
+                <Button android:id="@+id/btn2_NUMPAD8" style="@style/btnLightTheme" android:layout_weight="1" android:text="8" />
+                <Button android:id="@+id/btn2_8and6" style="@style/btnLightTheme" android:layout_weight="1" android:text="↗" />
             </LinearLayout>
 
     
@@ -212,12 +212,31 @@
 
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Button android:id="@+id/btn2_J" style="@style/btnLightTheme" android:layout_weight="1" android:text="j" />
-                <Button android:id="@+id/btn2_K" style="@style/btnLightTheme" android:layout_weight="1" android:text="k" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Button android:id="@+id/btn2_L" style="@style/btnLightTheme" android:layout_weight="1" android:text="l" />
+                <Button android:id="@+id/btn2_NUMPAD4" style="@style/btnLightTheme" android:layout_weight="1" android:text="4" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_NUMPAD6" style="@style/btnLightTheme" android:layout_weight="1" android:text="6" />
+            </LinearLayout>
+
+    
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="3dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_KandJ" style="@style/btnLightTheme" android:layout_weight="1" android:text="↙" />
+                <Button android:id="@+id/btn2_K" style="@style/btnLightTheme" android:layout_weight="1" android:text="k" />
+                <Button android:id="@+id/btn2_KandL" style="@style/btnLightTheme" android:layout_weight="1" android:text="↘" />
+                <Button android:id="@+id/btn2_2and4" style="@style/btnLightTheme" android:layout_weight="1" android:text="↙" />
+                <Button android:id="@+id/btn2_NUMPAD2" style="@style/btnLightTheme" android:layout_weight="1" android:text="2" />
+                <Button android:id="@+id/btn2_2and6" style="@style/btnLightTheme" android:layout_weight="1" android:text="↘" />
             </LinearLayout>
 
     
@@ -234,9 +253,9 @@
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_UPandLEFT" style="@style/btnLightTheme" android:layout_weight="1" android:text="↖" />
                 <Button android:id="@+id/btn2_Up" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↑" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_UPandRIGHT" style="@style/btnLightTheme" android:layout_weight="1" android:text="↗" />
             </LinearLayout>
 
 
@@ -272,9 +291,9 @@
                 <Button android:id="@+id/btn2_Enter" style="@style/btnDarkTheme" android:layout_weight="1" android:text="Etr" />
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
                 <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_DOWNandLEFT" style="@style/btnLightTheme" android:layout_weight="1" android:text="↙" />
                 <Button android:id="@+id/btn2_Down" style="@style/btnDarkTheme" android:layout_weight="1" android:text="↓" />
-                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <Button android:id="@+id/btn2_DOWNandRIGHT" style="@style/btnLightTheme" android:layout_weight="1" android:text="↘" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

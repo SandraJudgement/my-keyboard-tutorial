@@ -60,9 +60,24 @@ class MyInputMethodService : InputMethodService() {
 	    aButtonData(R.id.btnF1,131),aButtonData(R.id.btnF2,132),aButtonData(R.id.btnF3,133),aButtonData(R.id.btnF4,134),aButtonData(R.id.btnF5,135),
 	    aButtonData(R.id.btnF6,136),aButtonData(R.id.btnF7,137),aButtonData(R.id.btnF8,138),aButtonData(R.id.btnF9,139),aButtonData(R.id.btnF10,140),
 	    aButtonData(R.id.btnF11,141),aButtonData(R.id.btnF12,142),
-	    
-	    aButtonData(R.id.btn1_x,52),aButtonData(R.id.btn1_z,54)
-	    aButtonData(R.id.btn2_x,52),aButtonData(R.id.btn2_z,54)
+
+		
+	    aButtonData(R.id.btn1_x,52),
+	    aButtonData(R.id.btn1_z,54),
+
+            
+	    aButtonData(R.id.btn2_Up,19),
+            aButtonData(R.id.btn2_Down,20),
+	    aButtonData(R.id.btn2_Left,21),
+	    aButtonData(R.id.btn2_Right,22),
+            aButtonData(R.id.btn2_A,29),aButtonData(R.id.btn2_C,31),
+	    aButtonData(R.id.btn2_I,37),aButtonData(R.id.btn2_J,38),
+	    aButtonData(R.id.btn2_K,39),aButtonData(R.id.btn2_L,40),
+	    aButtonData(R.id.btn2_Q,45),aButtonData(R.id.btn2_S,47),
+	    aButtonData(R.id.btn2_V,50),aButtonData(R.id.btn2_W,51),aButtonData(R.id.btn2_X,52),
+            aButtonData(R.id.btn2_Z,54),
+	    aButtonData(R.id.btn2_Space,62),
+	    aButtonData(R.id.btn2_Enter,66)
 		
             /*
 	    aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),aButtonData(R.id.btn,),
@@ -99,6 +114,21 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
+	    SetShiftKeyboard()
+            return@setOnClickListener
+	}
+	keyboardBinding.btn1_ShiftKeyboardLayout.setOnClickListener {
+	    SetShiftKeyboard()
+            return@setOnClickListener
+	}
+	keyboardBinding.btn2_ShiftKeyboardLayout.setOnClickListener {
+	    SetShiftKeyboard()
+            return@setOnClickListener
+	}
+
+        return keyboardBinding.root
+    }
+    fun SetShiftKeyboard() {
 	    var KeyLayout0 = findViewById(R.id.keylayout0)
 	    var KeyLayout1 = findViewById(R.id.keylayout1)
 	    var KeyLayout2 = findViewById(R.id.keylayout2)
@@ -131,12 +161,7 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout1.setVisibility(View.GONE)
                 KeyLayout2.setVisibility(View.GONE)
 	    }
-            return@setOnClickListener
-	}
-
-        return keyboardBinding.root
     }
-    
     /*
     override fun onDestroy() {
         super.onDestroy();

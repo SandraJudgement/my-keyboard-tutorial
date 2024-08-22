@@ -110,7 +110,7 @@ class MyInputMethodService : InputMethodService() {
                     true
                 }
 	}
-	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
+	KeyLayout0.findViewById<Button>(R.id.btn1_ShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard()
             return@setOnClickListener
 	}

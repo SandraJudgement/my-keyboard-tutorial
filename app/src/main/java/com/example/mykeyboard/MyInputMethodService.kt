@@ -104,8 +104,10 @@ class MyInputMethodService : InputMethodService() {
                 layout.removeAllViews()
 		
                 // test_sub.xmlに変更する
-                var aaa = getLayoutInflater().inflate(R.layout.testlayout,layout)
+                var targetlayout = getLayoutInflater().inflate(R.layout.testlayout,layout)
 		nowKeyboardLayout = 1
+		
+		setButtonAction(targetlayout)
 	    }
             else if(nowKeyboardLayout == 1){
 		// コンテンツ部分のLayoutを取ってくる
@@ -117,8 +119,6 @@ class MyInputMethodService : InputMethodService() {
                 // test_sub.xmlに変更する
                 getLayoutInflater().inflate(R.layout.gamekeyboard_layout,layout)
 		nowKeyboardLayout = 2
-		
-		setButtonAction()
 	    }
             else if(nowKeyboardLayout == 2){
 		// コンテンツ部分のLayoutを取ってくる
@@ -136,7 +136,7 @@ class MyInputMethodService : InputMethodService() {
 
         return keyboardBinding.root
     }
-    fun setButtonAction() {
+    fun setButtonAction(targetlayout : Int) {
 	var alayout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
 	alayout.btnaaa_Z.setOnClickListener {
             val inputConnection = currentInputConnection

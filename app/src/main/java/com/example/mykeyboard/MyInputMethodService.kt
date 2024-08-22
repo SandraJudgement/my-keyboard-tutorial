@@ -85,8 +85,59 @@ class MyInputMethodService : InputMethodService() {
 	    aButtonData(R.id.btn2_Space,62),
 	    aButtonData(R.id.btn2_Enter,66)
 	)
+
 	for((abtnId,akeycode) in aButtonArray){
-	    val tbutton = keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+	    val tbutton = KeyLayout0.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+                    val action = event.action
+                    val inputConnection = currentInputConnection
+                    when(action){
+
+                        MotionEvent.ACTION_DOWN -> {
+                            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+                        }
+                        /*
+                        MotionEvent.ACTION_MOVE -> { 
+        	            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+	                }
+		        */
+                        MotionEvent.ACTION_UP -> {
+                            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, akeycode))
+                        }
+                        MotionEvent.ACTION_CANCEL -> {
+                        }
+                        else ->{
+                        }
+                    }
+                    true
+                }
+	}
+	for((abtnId,akeycode) in aButton1Array){
+	    val tbutton = KeyLayout1.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
+                    val action = event.action
+                    val inputConnection = currentInputConnection
+                    when(action){
+
+                        MotionEvent.ACTION_DOWN -> {
+                            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+                        }
+                        /*
+                        MotionEvent.ACTION_MOVE -> { 
+        	            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, akeycode))
+	                }
+		        */
+                        MotionEvent.ACTION_UP -> {
+                            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, akeycode))
+                        }
+                        MotionEvent.ACTION_CANCEL -> {
+                        }
+                        else ->{
+                        }
+                    }
+                    true
+                }
+	}
+	for((abtnId,akeycode) in aButton2Array){
+	    val tbutton = KeyLayout2.keyboardBinding.root.findViewById<Button>(abtnId).setOnTouchListener { v, event ->
                     val action = event.action
                     val inputConnection = currentInputConnection
                     when(action){

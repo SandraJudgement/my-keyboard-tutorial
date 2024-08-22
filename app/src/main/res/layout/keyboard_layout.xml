@@ -167,8 +167,8 @@
                 android:gravity="center"
                 android:orientation="horizontal">
     
-                <Button android:id="@+id/btnF1" style="@style/btnDarkTheme" android:layout_weight="1" android:text="F1" />
-                <Button android:id="@+id/btnF2" style="@style/btnDarkTheme" android:layout_weight="1" android:text="F2" />
+                <Button android:id="@+id/btnaaa_x" style="@style/btnDarkTheme" android:layout_weight="1" android:text="x" />
+                <Button android:id="@+id/btnaaa_z" style="@style/btnDarkTheme" android:layout_weight="1" android:text="z" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

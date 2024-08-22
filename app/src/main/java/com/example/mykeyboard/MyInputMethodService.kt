@@ -136,10 +136,10 @@ class MyInputMethodService : InputMethodService() {
         return keyboardBinding.root
     }
     fun setButtonAction(keyboardBinding : KeyboardLayoutBinding){
-        var layout =　keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
+	var layout =　KeyboardLayoutBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
 	layout.btnaaa_Z.setOnClickListener {
-        val inputConnection = currentInputConnection
-        inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
+            val inputConnection = currentInputConnection
+            inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
 	}
     }
     

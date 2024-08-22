@@ -136,6 +136,7 @@ class MyInputMethodService : InputMethodService() {
         return keyboardBinding.root
     }
     fun setButtonAction(keyboardBinding : KeyboardLayoutBinding){
+        keyboardBinding =　KeyboardLayoutBinding.inflate(layoutInflater)
 	var alayout =　keyboardBinding.root.findViewById(R.layout.testlayout)
 	/*
 	alayout.btnaaa_Z.setOnClickListener {

@@ -138,7 +138,7 @@ class MyInputMethodService : InputMethodService() {
     }
     fun setButtonAction(targetView : View) {
 	var alayout = keyboardBinding.root.findViewById<LinearLayout>(R.id.testlayout_content)
-	alayout.btnaaa_Z.setOnClickListener {
+	targetView.btnaaa_Z.setOnClickListener {
             val inputConnection = currentInputConnection
             inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 8))
 	}

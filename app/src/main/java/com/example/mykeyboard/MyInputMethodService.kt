@@ -96,6 +96,13 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 	keyboardBinding.btnShiftKeyboardLayout.setOnClickListener {
+	    mViewGroup = findViewById(R.id.viewsContainer);
+            if (mViewGroup.getVisibility() == View.VISIBLE) {
+                mViewGroup.setVisibility(View.GONE);
+            }
+            else {
+                mViewGroup.setVisibility(View.VISIBLE);
+	     }
             if(nowKeyboardLayout == 0){
 	        // コンテンツ部分のLayoutを取ってくる
                 var layout = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)

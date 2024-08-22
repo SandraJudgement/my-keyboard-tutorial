@@ -86,6 +86,10 @@ class MyInputMethodService : InputMethodService() {
             aButtonData(R.id.btn2_Z,54),
 	    aButtonData(R.id.btn2_Space,62),
 	    aButtonData(R.id.btn2_Enter,66)
+	    aButtonData(R.id.btn2_NUMPAD2,146)
+	    aButtonData(R.id.btn2_NUMPAD4,148)
+	    aButtonData(R.id.btn2_NUMPAD6,150)
+	    aButtonData(R.id.btn2_NUMPAD8,152)
 	)
 
 	for((abtnId,akeycode) in aButtonArray){
@@ -163,6 +167,29 @@ class MyInputMethodService : InputMethodService() {
                     true
                 }
 	}
+
+
+
+	
+	KeyLayout2.findViewById<Button>(R.id.btn2_IandJ).setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 37))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 38))
+                }
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 37))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 37))
+                }
+            }
+            true
+        }
+
+
+
+	    
 	KeyLayout0.findViewById<Button>(R.id.btnShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener

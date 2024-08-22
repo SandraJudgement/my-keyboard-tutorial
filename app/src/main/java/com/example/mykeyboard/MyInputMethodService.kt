@@ -23,9 +23,9 @@ class MyInputMethodService : InputMethodService() {
     */
     override fun onCreateInputView(): View {
             //keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
-	    var KeyLayout0 = keyboardBinding.root.findViewById(R.id.keylayout0)
-	    var KeyLayout1 = keyboardBinding.root.findViewById(R.id.keylayout1)
-	    var KeyLayout2 = keyboardBinding.root.findViewById(R.id.keylayout2)
+	    var KeyLayout0 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout0)
+	    var KeyLayout1 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout1)
+	    var KeyLayout2 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout2)
 	val aButtonArray = arrayOf(
 	    aButtonData(R.id.btn0,7),aButtonData(R.id.btn1,8),aButtonData(R.id.btn2,9),aButtonData(R.id.btn3,10),aButtonData(R.id.btn4,11),
 	    aButtonData(R.id.btn5,12),aButtonData(R.id.btn6,13),aButtonData(R.id.btn7,14),aButtonData(R.id.btn8,15),aButtonData(R.id.btn9,16),
@@ -126,9 +126,9 @@ class MyInputMethodService : InputMethodService() {
         return keyboardBinding.root
     }
     fun SetShiftKeyboard() {
-	    var KeyLayout0 = keyboardBinding.root.findViewById(R.id.keylayout0)
-	    var KeyLayout1 = keyboardBinding.root.findViewById(R.id.keylayout1)
-	    var KeyLayout2 = keyboardBinding.root.findViewById(R.id.keylayout2)
+	    var KeyLayout0 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout0)
+	    var KeyLayout1 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout1)
+	    var KeyLayout2 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout2)
             nowKeyboardLayout = 0
             if (KeyLayout0.getVisibility() == View.VISIBLE) {
             nowKeyboardLayout = 0b00000001 or nowKeyboardLayout

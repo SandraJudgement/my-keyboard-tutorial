@@ -13,6 +13,8 @@ import android.widget.Button
 import android.widget.LinearLayout;
 import android.view.MotionEvent
 
+import android.util.Log
+
 import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {

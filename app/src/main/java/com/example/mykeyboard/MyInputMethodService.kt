@@ -4,6 +4,7 @@ package com.example.mykeyboard
 import android.os.Bundle
 import android.app.Activity
 
+import android.content.SharedPreferences;
 import android.inputmethodservice.InputMethodService
 import android.view.KeyEvent
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
     var nowKeyboardLayout = 0
+    var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
     /*
     override fun onCreate() {
         super.onCreate();
@@ -403,6 +405,17 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout1.setVisibility(View.GONE)
                 KeyLayout2.setVisibility(View.GONE)
 	    }
+    }
+    override fun onStartInputView(editorInfo : EditorInfo, restarting : boolean) {
+	//SharedPreferencesを取得
+        prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+	
+	//
+        var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
+	if(enableBackgroundTransparency == true){
+	    keyboardBinding.background = getDrawable(R.color.blue)
+	}
     }
     /*
     override fun onDestroy() {

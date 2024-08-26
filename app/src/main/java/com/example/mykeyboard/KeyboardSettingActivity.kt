@@ -30,7 +30,7 @@ class KeyboardSettingActivity : AppCompatActivity() {
         var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS);
         var editor = prefs.edit();
 
-        var switchBackgroundTransparency = (Switch) findViewById(R.id.switch_background_transparency);
+        var switchBackgroundTransparency = findViewById<Switch>(R.id.switch_background_transparency);
         switchBackgroundTransparency.setChecked(prefs.getBoolean("enableBackgroundTransparency", false));
         switchBackgroundTransparency.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener() {
             @Override

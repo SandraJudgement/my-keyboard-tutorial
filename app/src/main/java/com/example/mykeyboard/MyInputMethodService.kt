@@ -370,8 +370,42 @@ class MyInputMethodService : InputMethodService() {
             return@setOnClickListener
 	}
 
+
+
+
+	//SharedPreferencesを取得
+        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+	
+	//
+        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
+	if(enableBackgroundTransparency == true){
+	    keyboardBinding.root.background = getDrawable(R.color.blue)
+	}
+
+
+
+
+	
         return keyboardBinding.root
     }
+
+
+    
+    override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
+	//SharedPreferencesを取得
+        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+	
+	//
+        var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
+	if(enableBackgroundTransparency == true){
+	    keyboardBinding.root.background = getDrawable(R.color.blue)
+	}
+    }
+
+
+    
     fun SetShiftKeyboard(keyboardBinding : KeyboardLayoutBinding) {
 	    var KeyLayout0 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout0)
 	    var KeyLayout1 = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout1)
@@ -405,17 +439,6 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout1.setVisibility(View.GONE)
                 KeyLayout2.setVisibility(View.GONE)
 	    }
-    }
-    override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
-	//SharedPreferencesを取得
-        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
-	
-	//
-        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
-	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
-	if(enableBackgroundTransparency == true){
-	    keyboardBinding.root.background = getDrawable(R.color.blue)
-	}
     }
     /*
     override fun onDestroy() {

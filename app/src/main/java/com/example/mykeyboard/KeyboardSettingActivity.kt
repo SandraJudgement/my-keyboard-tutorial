@@ -32,12 +32,9 @@ class KeyboardSettingActivity : AppCompatActivity() {
 
         var switchBackgroundTransparency = findViewById<Switch>(R.id.switch_background_transparency);
         switchBackgroundTransparency.setChecked(prefs.getBoolean("enableBackgroundTransparency", false));
-        switchBackgroundTransparency.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener() {
-            @Override
-            fun onCheckedChanged(compoundButton: CompoundButton, b: boolean) {
-                editor.putBoolean("enableBackgroundTransparency", b).apply();
-            }
-        });
+        switchBackgroundTransparency.setOnCheckedChangeListener{ _, isChecked ->
+            editor.putBoolean("enableBackgroundTransparency", b).apply()
+        }
 
 
     }

@@ -7,6 +7,9 @@ import android.provider.Settings
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+
+import android.util.Log
+
 import com.example.mykeyboard.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,17 +37,17 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             btnKeyboardSetting.setOnClickListener {
-                /*
-                if (!isKeyboardEnabled()) {
-                    val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
-                    startActivity(intent)
-                }
-                */
-                
-                val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                if (inputMethodManager != null) {
-                    val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
-                    startActivity(intent)
+                //インストールされているIMEアプリケーション一覧取得
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                var inputMethodInfoList : List<InputMethodInfo> = imm.getEnabledInputMethodList();
+                for (inputMethodInfoData in inputMethodInfoList) {
+                    CharSequence label = inputMethodInfoData.loadLabel(getPackageManager());
+
+                    if (label.ToString() == ("hoge_keyboard")) {
+                        val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
+                        startActivity(intent)
+                    }
+                    Log.d("MainActivity","lavel: " + label.toString())
                 }
             }
         }

@@ -368,7 +368,7 @@ class MyInputMethodService : InputMethodService() {
 	KeyLayout2.findViewById<Button>(R.id.btn2_ShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
-	}	
+	}
         return keyboardBinding.root
     }
 
@@ -383,9 +383,12 @@ class MyInputMethodService : InputMethodService() {
 	var keylayout_content = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
 	
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
-	//if(enableBackgroundTransparency == true){
+	if(enableBackgroundTransparency == true){
 	    keylayout_content.background = getDrawable(R.color.blue)
-	//}
+	}
+	else{
+	    keylayout_content.background = getDrawable(R.color.white)
+	}
     }
 
 

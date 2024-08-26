@@ -388,6 +388,7 @@ class MyInputMethodService : InputMethodService() {
 	else{
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
+        Log.d(enableBackgroundTransparency)
     return true
 }
     /*
@@ -406,6 +407,7 @@ class MyInputMethodService : InputMethodService() {
 	else{
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
+        Log.d(enableBackgroundTransparency)
     }
     */
 

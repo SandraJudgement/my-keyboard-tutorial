@@ -382,7 +382,7 @@ class MyInputMethodService : InputMethodService() {
         var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS)
 	
 	//
-        var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	var keylayout_content = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
 	
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)

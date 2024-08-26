@@ -19,12 +19,7 @@
         android:layout_height="wrap_content"
         android:text="メイン画面へ遷移する"
         android:layout_marginTop="16dp"/>
-
-</LinearLayout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    
     <Switch
         android:id="@+id/switch_transparency"
         android:layout_width="match_parent"

@@ -74,16 +74,24 @@ class MyInputMethodService : InputMethodService() {
 	    */
 	)
 	val aButton1Array = arrayOf(
-	    aButtonData(R.id.btn1_x,52),
-	    aButtonData(R.id.btn1_z,54)
+	    aButtonData(R.id.btn1_Up,19),
+            aButtonData(R.id.btn1_Down,20),
+	    aButtonData(R.id.btn1_Left,21),
+	    aButtonData(R.id.btn1_Right,22),
+            aButtonData(R.id.btn1_A,29),aButtonData(R.id.btn1_C,31),aButtonData(R.id.btn1_D,32),
+	    aButtonData(R.id.btn1_Q,45),aButtonData(R.id.btn1_S,47),
+	    aButtonData(R.id.btn1_W,51),aButtonData(R.id.btn1_X,52),
+            aButtonData(R.id.btn1_Z,54),
+	    aButtonData(R.id.btn1_Space,62),
+	    aButtonData(R.id.btn1_Enter,66)
 	)
 	val aButton2Array = arrayOf(
 	    aButtonData(R.id.btn2_Up,19),
             aButtonData(R.id.btn2_Down,20),
 	    aButtonData(R.id.btn2_Left,21),
 	    aButtonData(R.id.btn2_Right,22),
-            aButtonData(R.id.btn2_A,29),aButtonData(R.id.btn2_C,31),
-	    aButtonData(R.id.btn2_I,37),aButtonData(R.id.btn2_J,38),
+            aButtonData(R.id.btn2_A,29),aButtonData(R.id.btn2_C,31),aButtonData(R.id.btn2_D,32),
+	    aButtonData(R.id.btn2_F,34),aButtonData(R.id.btn2_I,37),aButtonData(R.id.btn2_J,38),
 	    aButtonData(R.id.btn2_K,39),aButtonData(R.id.btn2_L,40),
 	    aButtonData(R.id.btn2_Q,45),aButtonData(R.id.btn2_S,47),
 	    aButtonData(R.id.btn2_V,50),aButtonData(R.id.btn2_W,51),aButtonData(R.id.btn2_X,52),
@@ -172,6 +180,69 @@ class MyInputMethodService : InputMethodService() {
                 }
 	}
 
+
+
+	
+	KeyLayout1.findViewById<Button>(R.id.btn1_UPandLEFT).setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 19))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 21))
+                }
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 19))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 21))
+                }
+            }
+            true
+        }
+	KeyLayout1.findViewById<Button>(R.id.btn1_UPandRIGHT).setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 19))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 22))
+                }
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 19))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 22))
+                }
+            }
+            true
+        }
+	KeyLayout1.findViewById<Button>(R.id.btn1_DOWNandLEFT).setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 20))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 21))
+                }
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 20))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 21))
+                }
+            }
+            true
+        }
+	KeyLayout1.findViewById<Button>(R.id.btn1_DOWNandRIGHT).setOnTouchListener { v, event ->
+            val action = event.action
+            val inputConnection = currentInputConnection
+            when(action){
+                MotionEvent.ACTION_DOWN -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 20))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN, 22))
+                }
+                MotionEvent.ACTION_UP -> {
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 20))
+                    inputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP, 22))
+                }
+            }
+            true
+        }
 
 
 	

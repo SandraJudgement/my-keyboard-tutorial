@@ -34,10 +34,8 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             btnKeyboardSetting.setOnClickListener {
-                if (!isKeyboardEnabled()) {
-                    val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
-                    startActivity(intent)
-                }
+                val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
+                startActivity(intent)
             }
         }
     }

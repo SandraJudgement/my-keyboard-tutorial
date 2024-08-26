@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.inputmethodservice.InputMethodService
 import android.view.KeyEvent
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.LinearLayout;
 import android.view.MotionEvent
@@ -406,7 +407,7 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout2.setVisibility(View.GONE)
 	    }
     }
-    override fun onStartInputView(): View {
+    override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
 	//SharedPreferencesを取得
         prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
 	

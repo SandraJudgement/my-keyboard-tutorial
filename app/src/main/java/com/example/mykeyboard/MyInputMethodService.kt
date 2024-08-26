@@ -383,9 +383,9 @@ class MyInputMethodService : InputMethodService() {
 	var keylayout_content = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
 	
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
-	if(enableBackgroundTransparency == true){
+	//if(enableBackgroundTransparency == true){
 	    keylayout_content.background = getDrawable(R.color.blue)
-	}
+	//}
     }
 
 

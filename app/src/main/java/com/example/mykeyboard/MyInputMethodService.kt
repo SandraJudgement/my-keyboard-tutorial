@@ -390,7 +390,7 @@ class MyInputMethodService : InputMethodService() {
 	else{
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
-        Log.d("MyInputMethodService",enableBackgroundTransparency)
+        Log.d("MyInputMethodService",enableBackgroundTransparency.toString())
     return true
 }
     /*
@@ -409,7 +409,7 @@ class MyInputMethodService : InputMethodService() {
 	else{
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
-        Log.d("MyInputMethodService",enableBackgroundTransparency)
+        Log.d("MyInputMethodService",enableBackgroundTransparency.toString())
     }
     */
 

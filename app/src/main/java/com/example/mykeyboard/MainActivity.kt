@@ -37,18 +37,8 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             btnKeyboardSetting.setOnClickListener {
-                //インストールされているIMEアプリケーション一覧取得
-                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                var inputMethodInfoList : List<InputMethodInfo> = imm.getEnabledInputMethodList();
-                for (inputMethodInfoData in inputMethodInfoList) {
-                    CharSequence label = inputMethodInfoData.loadLabel(getPackageManager());
-
-                    if (label.ToString() == ("hoge_keyboard")) {
-                        val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
-                        startActivity(intent)
-                    }
-                    Log.d("MainActivity","lavel: " + label.toString())
-                }
+                val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
+                startActivity(intent)
             }
         }
     }

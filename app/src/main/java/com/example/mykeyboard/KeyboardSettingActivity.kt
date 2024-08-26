@@ -11,9 +11,9 @@ import android.widget.Button
 import android.widget.Toast
 
 class KeyboardSettingActivity : AppCompatActivity() {
-    private SharedPreferences prefs;
-    private SharedPreferences.Editor editor;
-    private Switch switchBackgroundTransparency;
+    private prefs : SharedPreferences
+    private editor : SharedPreferences.Editor
+    private switchBackgroundTransparency : Switch
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

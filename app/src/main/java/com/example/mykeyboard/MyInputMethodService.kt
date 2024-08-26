@@ -17,7 +17,6 @@ import com.example.mykeyboard.databinding.KeyboardLayoutBinding
 
 class MyInputMethodService : InputMethodService() {
     var nowKeyboardLayout = 0
-    var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
     /*
     override fun onCreate() {
         super.onCreate();
@@ -409,7 +408,7 @@ class MyInputMethodService : InputMethodService() {
     }
     override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
 	//SharedPreferencesを取得
-        prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
 	
 	//
         var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)

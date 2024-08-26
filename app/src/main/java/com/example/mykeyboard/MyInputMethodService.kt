@@ -377,7 +377,7 @@ class MyInputMethodService : InputMethodService() {
 
     override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
 	//SharedPreferencesを取得
-        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+        var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS)
 	
 	//
         var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)

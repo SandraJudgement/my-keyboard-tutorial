@@ -368,25 +368,7 @@ class MyInputMethodService : InputMethodService() {
 	KeyLayout2.findViewById<Button>(R.id.btn2_ShiftKeyboardLayout).setOnClickListener {
 	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
-	}
-
-
-
-
-	//SharedPreferencesを取得
-        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
-	
-	//
-        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
-	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
-	if(enableBackgroundTransparency == true){
-	    keyboardBinding.root.background = getDrawable(R.color.blue)
-	}
-
-
-
-
-	
+	}	
         return keyboardBinding.root
     }
 
@@ -398,6 +380,8 @@ class MyInputMethodService : InputMethodService() {
 	
 	//
         var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var keylayout_content = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
+	
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
 	if(enableBackgroundTransparency == true){
 	    keyboardBinding.root.background = getDrawable(R.color.blue)

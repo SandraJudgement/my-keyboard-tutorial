@@ -406,7 +406,7 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout2.setVisibility(View.GONE)
 	    }
     }
-    override fun onStartInputView() {
+    override fun onStartInputView(): View {
 	//SharedPreferencesを取得
         prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
 	

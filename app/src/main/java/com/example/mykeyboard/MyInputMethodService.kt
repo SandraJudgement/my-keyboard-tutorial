@@ -406,7 +406,7 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout2.setVisibility(View.GONE)
 	    }
     }
-    override fun onStartInputView(editorInfo : EditorInfo, restarting : boolean) {
+    override fun onStartInputView() {
 	//SharedPreferencesを取得
         prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
 	
@@ -414,7 +414,7 @@ class MyInputMethodService : InputMethodService() {
         var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
 	if(enableBackgroundTransparency == true){
-	    keyboardBinding.background = getDrawable(R.color.blue)
+	    keyboardBinding.root.background = getDrawable(R.color.blue)
 	}
     }
     /*

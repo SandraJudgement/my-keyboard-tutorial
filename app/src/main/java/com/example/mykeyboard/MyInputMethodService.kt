@@ -420,7 +420,7 @@ class MyInputMethodService : InputMethodService() {
 	else{
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
-        Log.d("MyInputMethodService","enableBackgroundTransparency" + enableBackgroundTransparency.toString())
+        //Log.d("MyInputMethodService","enableBackgroundTransparency" + enableBackgroundTransparency.toString())
 	//////////////////////////////////////////////////////////////////////////////////////////
     }
 

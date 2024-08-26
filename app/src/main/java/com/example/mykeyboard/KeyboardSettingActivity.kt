@@ -1,13 +1,20 @@
 package com.example.mykeyboard
 
+import android.content.SharedPreferences;
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.view.View
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Button
 import android.widget.Toast
 
 class KeyboardSettingActivity : AppCompatActivity() {
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+    private Switch switchBackgroundTransparency;
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.keyboardsettinglayout)
@@ -21,5 +28,20 @@ class KeyboardSettingActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        //スイッチの処理
+        prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS);
+        editor = prefs.edit();
+
+        switchBackgroundTransparency = (Switch) findViewById(R.id.switch_background_transparency);
+        switchBackgroundTransparency.setChecked(prefs.getBoolean("enableBackgroundTransparency", false));
+        switchBackgroundTransparency.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                editor.putBoolean("enableBackgroundTransparency", b).apply();
+            }
+        });
+
+
     }
 }

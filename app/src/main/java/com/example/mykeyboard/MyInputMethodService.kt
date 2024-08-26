@@ -385,10 +385,10 @@ class MyInputMethodService : InputMethodService() {
 	
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
 	if(enableBackgroundTransparency == true){
-	    keylayout_content.background = getDrawable(R.color.blue)
+	    keylayout_content.background = getDrawable(R.color.white)
 	}
 	else{
-	    keylayout_content.background = getDrawable(R.color.white)
+	    keylayout_content.background = getDrawable(R.color.blue)
 	}
 
 

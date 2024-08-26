@@ -375,7 +375,7 @@ class MyInputMethodService : InputMethodService() {
     }
 
 
-    override fun onWindowShown(){
+    override fun onStartInput(attribute: EditorInfo, restarting: Boolean)(){
 	//////////////////////////////////////////////////////////////////////////////////////////
 	//SharedPreferencesを取得
         var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS)

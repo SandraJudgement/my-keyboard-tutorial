@@ -11,9 +11,6 @@ import android.widget.Button
 import android.widget.Toast
 
 class KeyboardSettingActivity : AppCompatActivity() {
-    var prefs : SharedPreferences
-    var editor : SharedPreferences.Editor
-    var switchBackgroundTransparency : Switch
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +27,10 @@ class KeyboardSettingActivity : AppCompatActivity() {
         }
 
         //スイッチの処理
-        prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS);
-        editor = prefs.edit();
+        var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS);
+        var editor = prefs.edit();
 
-        switchBackgroundTransparency = (Switch) findViewById(R.id.switch_background_transparency);
+        var switchBackgroundTransparency = (Switch) findViewById(R.id.switch_background_transparency);
         switchBackgroundTransparency.setChecked(prefs.getBoolean("enableBackgroundTransparency", false));
         switchBackgroundTransparency.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener() {
             @Override

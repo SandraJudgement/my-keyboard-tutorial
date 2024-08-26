@@ -33,7 +33,7 @@ class KeyboardSettingActivity : AppCompatActivity() {
         var switchBackgroundTransparency = findViewById<Switch>(R.id.switch_background_transparency);
         switchBackgroundTransparency.setChecked(prefs.getBoolean("enableBackgroundTransparency", false));
         switchBackgroundTransparency.setOnCheckedChangeListener{ _, isChecked ->
-            editor.putBoolean("enableBackgroundTransparency", b).apply()
+            editor.putBoolean("enableBackgroundTransparency", isChecked).apply()
         }
 
 

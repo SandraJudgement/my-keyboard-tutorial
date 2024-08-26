@@ -371,11 +371,41 @@ class MyInputMethodService : InputMethodService() {
 	    SetShiftKeyboard(keyboardBinding)
             return@setOnClickListener
 	}
+
+
+
+
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////////////
+	//SharedPreferencesを取得
+        var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS)
+	
+	//
+        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var keylayout_content = keyboardBinding.root.findViewById<LinearLayout>(R.id.keylayout_content)
+	
+	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
+	if(enableBackgroundTransparency == true){
+	    keylayout_content.background = getDrawable(R.color.blue)
+	}
+	else{
+	    keylayout_content.background = getDrawable(R.color.white)
+	}
+        Log.d("MyInputMethodService","enableBackgroundTransparency" + enableBackgroundTransparency.toString())
+	//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+	
+	
         return keyboardBinding.root
     }
 
 
     override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
+	//////////////////////////////////////////////////////////////////////////////////////////
 	//SharedPreferencesを取得
         var prefs = getSharedPreferences("Keyboard_SettingData", MODE_MULTI_PROCESS)
 	
@@ -391,6 +421,7 @@ class MyInputMethodService : InputMethodService() {
 	    keylayout_content.background = getDrawable(R.color.white)
 	}
         Log.d("MyInputMethodService","enableBackgroundTransparency" + enableBackgroundTransparency.toString())
+	//////////////////////////////////////////////////////////////////////////////////////////
     }
 
 

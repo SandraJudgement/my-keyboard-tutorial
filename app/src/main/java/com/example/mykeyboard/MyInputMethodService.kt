@@ -405,13 +405,25 @@ class MyInputMethodService : InputMethodService() {
                 KeyLayout1.setVisibility(View.GONE)
                 KeyLayout2.setVisibility(View.GONE)
 	    }
+
+
+	    
+	//SharedPreferencesを取得
+        var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
+	
+	//
+        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
+	if(enableBackgroundTransparency == true){
+	    keyboardBinding.root.background = getDrawable(R.color.blue)
+	}
     }
     override fun onStartInputView(attribute: EditorInfo, restarting: Boolean){
 	//SharedPreferencesを取得
         var prefs = getSharedPreferences("NewKeyboardData", MODE_MULTI_PROCESS)
 	
 	//
-        var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
+        //var keyboardBinding = KeyboardLayoutBinding.inflate(layoutInflater)
 	var enableBackgroundTransparency = prefs.getBoolean("enableBackgroundTransparency", false)
 	if(enableBackgroundTransparency == true){
 	    keyboardBinding.root.background = getDrawable(R.color.blue)

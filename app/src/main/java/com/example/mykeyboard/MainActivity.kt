@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 */
                 
                 val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                if (imeManager != null) {
+                if (inputMethodManager != null) {
                     val intent = Intent(this@MainActivity, KeyboardSettingActivity::class.java)
                     startActivity(intent)
                 }
